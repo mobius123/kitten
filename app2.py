@@ -1,16 +1,16 @@
 from flask import Flask, render_template, redirect, request, make_response, json
 import os
 from twitter import *
-from flaskext.mysql import MySQL
+from flask_mysql import MySQL
 from werkzeug import generate_password_hash, check_password_hash
 
 mysql = MySQL()
 app = Flask(__name__)
 
-app.config['MYSQL_DATABASE_USER'] = 'mobius123'
-app.config['MYSQL_DATABASE_PASSWORD'] = 'las'
+app.config['MYSQL_DATABASE_USER'] = ''
+app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'Kitten2'
-app.config['MYSQL_DATABASE_HOST'] = '0.0.0.0'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 mysql.init_app(app)
 
 @app.route('/')
@@ -22,7 +22,7 @@ def showSignUp():
     
 @app.route('/signUp',methods=['POST'])
 def signUp():
-    try:
+    
      _name = request.form['inputName']
      _email = request.form['inputEmail']
      _password = request.form['inputPassword']
@@ -31,9 +31,7 @@ def signUp():
      _accesstoken = request.form['inputAccesstoken']
      _tokensecret = request.form['inputTokensecret']
     
-     if _name and _email and _password and _consumerkey and _consumersecret and _accesstoken and _tokensecret:
-      
-      conn = mysql.connect()
+    conn = mysql.connect()
       cursor = conn.cursor()
       _hashed_password = generate_password_hash(_password)
       cursor.callproc('sp_createUser',(_name,_email,_hashed_password,_consumerkey,_consumersecret,_accesstoken,_tokensecret))
@@ -54,6 +52,5 @@ def signUp():
         conn.close()
 
 
-# Run the app.
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))

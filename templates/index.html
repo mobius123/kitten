@@ -1,25 +1,70 @@
-<html>
-    <style>
-body{
-background: #67B26F; /* fallback for old browsers */
-background: -webkit-linear-gradient(to left, #67B26F , #4ca2cd); /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to left, #67B26F , #4ca2cd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- }  
-</style>
-  <head>
-    <title>Kitten v. 0.0.01 </title>
-  </head>
-  <body>
-    <h2>Welcome to Kitten v. 0.0.01 </h2> <br />
-    <h2> Kitten makes Tweetie tweet for you!</h2><br />
-       <h2>Please state:</h2>
-       <form action="/login" method="post">
-  Consumer key: <input type="text" name="consumerkey"></input>
-  Consumer secret: <input type="text" name="consumersecret"></input>
-   Access Token <input type="text" name="accesstoken"></input>
-   Token Secret <input type="text" name="tokensecret"></input>
-  <input type="submit" value="send"></input>
-</form>
-Login with <a href="login">Twitter</a>.<br />
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <title>Python Kitten App</title>
+ 
+ 
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+ 
+    <link href="https://github.com/jlong/sass-bootstrap-defunct/blob/master/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+ 
+ 
+</head>
+ 
+<body>
+ 
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="#">Home</a>
+                    </li>
+                    <li role="presentation"><a href="#">Sign In</a>
+                    </li>
+                    <li role="presentation"><a href="showSignUp">Sign Up</a>
+                    </li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">Kitten App</h3>
+        </div>
+ 
+        <div class="jumbotron">
+            <h1>Kitten App</h1>
+            <p class="lead"></p>
+            <p><a class="btn btn-lg btn-success" href="showSignUp" role="button">Sign up today</a>
+            </p>
+        </div>
+ 
+        <div class="row marketing">
+            <div class="col-lg-6">
+                <h4>Kitten App</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+                <h4>Kitten App</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+ 
+                <h4>Kitten App</h4>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+ 
+            <div class="col-lg-6">
+                <h4>Kitten App</h4>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+ 
+                <h4>Kitten App</h4>
+                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+ 
+                <h4>Kitten App</h4>
+                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            </div>
+        </div>
+ 
+        <footer class="footer">
+            <p>&copy; LB 2016</p>
+        </footer>
+ 
+    </div>
+</body>
+ 
 </html>
